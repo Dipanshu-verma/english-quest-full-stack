@@ -16,9 +16,12 @@ function App() {
       <Navbar/>
     <Routes>
     <Route path='/' element={token?<Dashbaord/>:<Navigate to="login" />}  />
-      <Route path='/dashboard' element={<Dashbaord/>}  />
-      <Route path='/createpost' element={<CreatePost/>} />
-
+    {
+      token &&<><Route path='/dashboard' element={token?<Dashbaord/>:<Navigate to="login" />}  />
+      <Route path='/createpost' element={token?<CreatePost/>:<Navigate to="login" />} />
+      </>
+    }
+    
       <Route path='/login' element={<Auth/>}  />
 
     </Routes>

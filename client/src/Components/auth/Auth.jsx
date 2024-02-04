@@ -27,11 +27,12 @@ const Auth = () => {
         await dispatch(registerAction(userData));
 
         alert("Signup successful");
-        setShignupForm(false);
         setUserData({
           email: "",
           password: "",
         });
+        setShignupForm(false);
+       
       } else {
         await dispatch(loginAction(userData));
 
@@ -66,12 +67,13 @@ const Auth = () => {
               signupForm ? "text-black" : "text-white"
             } text-center text-2xl py-2  `}
             onClick={() => {
-              setShignupForm(false);
-
+              
               setUserData({
                 email: "",
                 password: "",
               });
+              setShignupForm(false);
+
             }}
           >
             Login
@@ -81,12 +83,13 @@ const Auth = () => {
               signupForm ? "text-white" : "text-black"
             } text-center text-2xl py-2 `}
             onClick={() => {
-              setShignupForm(true);
-
               setUserData({
                 email: "",
                 password: "",
               });
+              setShignupForm(true);
+
+            
             }}
           >
             Signup
@@ -132,13 +135,14 @@ const Auth = () => {
               Not a member?{" "}
               <span
                 onClick={() => {
-                  setShignupForm(true);
-
+                  
                   setUserData({
                     email: "",
                     password: "",
                     confirmPassword: "",
                   });
+                  setShignupForm(true);
+
                 }}
                 className="text-blue-500 opacity-70 cursor-pointer"
               >
