@@ -9,7 +9,7 @@ const initialState = {
  
   
   export const storeReducer = (state = initialState, action) => {
-    console.log(state);
+ 
     switch (action.type) {
       case 'LOGIN':
         return {

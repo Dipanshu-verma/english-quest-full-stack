@@ -39,7 +39,7 @@ const Auth = () => {
         navigate("/dashboard");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
   return (

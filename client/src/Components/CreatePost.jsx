@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBooks } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const [postDetails, setPostDetails] = useState({
@@ -10,6 +11,7 @@ const CreatePost = () => {
     rating: 0,
   });
 
+  const navigate =  useNavigate();
   const dispatch = useDispatch();
   const { token } = useSelector((store) => store);
   const handleInputChange = (e) => {
@@ -34,10 +36,10 @@ const CreatePost = () => {
     "Japanese",
     "Chinese",
   ];
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    dispatch(addBooks(postDetails, token));
-    console.log("Submitted data:", postDetails);
+   await dispatch(addBooks(postDetails, token));
+   navigate("/dashboard")
   };
 
   return (
