@@ -1,0 +1,32 @@
+ .formclasslogin{
+    right: 50%;
+    transform: translate(0,-50%,0,0);
+    transition: right .3s ease-in-out;
+ }
+ .formclasssignup{
+    right: 0;
+    
+    transition: right .3s ease-in-out;
+ }
+
+ .hideSignupForm{
+   
+    right: -300%;
+    transition: right .5s ease-in-out;
+ }
+ .showSignupForm{
+    right:0;
+    transition: right .5s ease-in-out;
+ }
+
+ .hideLoginForm{
+   left: -300%;
+    transition: left .5s ease-in-out;
+ }
+ .showLoginForm{
+    left:0;
+    transition: left .5s ease-in-out;
+ }
+
+ 
+
